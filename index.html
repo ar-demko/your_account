@@ -27,31 +27,38 @@
             </article> -->
 
             <article class="main-form">
-              <h2>Take it all with you. Switch between devices, and pick up.</h2>
+              <h2>Please complete all the required fields in the form below</h2>
               <form class="" action="index.html" method="post">
                 <fieldset>
 
                   <label>
                     <p>Your name:</p>
-                    <div class="fieldset-container name-container">
-                      <input type="text" name="name" id="name">
+                    <div class="field-container name-container">
+                      <input type="text" name="name" id="name" placeholder="John Smith">
                     </div>
                   </label>
 
                   <label>
                     <p>Mobile:</p>
-                    <div class="fieldset-container mobile-container">
+                    <div class="field-container mobile-container">
                       <select name="mobile" class="mobile">
                         <option value="+48">+48 PL</option>
                         <option value="+44">+44 UK</option>
                       </select>
-                      <input type="tel" name="tel" class="tel">
+                      <input type="tel" name="tel" class="tel" placeholder="000 000 000">
+                    </div>
+                  </label>
+
+                  <label for="field-container email-container">
+                    <p>Your e-mail:</p>
+                    <div class="">
+                      <input type="email" name="email" placeholder="jsmith@mail.com">
                     </div>
                   </label>
 
                   <label>
                     <p>Date of birth:</p>
-                    <div class="fieldset-container birth-container">
+                    <div class="field-container birth-container">
                       <select name="dob-day" class="dob-day">
                         <option value="">Day</option>
                         <option value="01">01</option>
