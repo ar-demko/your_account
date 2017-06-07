@@ -15,10 +15,14 @@ html {
 
 body {
   font-family: "Open Sans", Arial, sans-serif;
-  background-color: #242425;
+  background-color: #323233;
 }
 
-// GRID
+// main {
+//   align-items: center
+// }
+
+//---------------------- GRID --------------------------------------------------
 
 .container {
   max-width: 780px;
@@ -51,12 +55,13 @@ body {
   }
 }
 
-// HEADER
+//-------------------------------- HEADER --------------------------------------
 
 header {
   h1 {
     font-weight: 300;
-    color: #ffffff;
+    color: #f1f1f4;
+    text-transform: uppercase;
     text-align: center;
     font-size: 30px;
     @media #{$tablet} {
@@ -68,18 +73,16 @@ header {
   }
 }
 
-// MAIN
+//--------------------------------- MAIN ---------------------------------------
 
 #form {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  // justify-content: space-between;
 }
 
+// IMG BOX
 .left-box {
-  // max-width: 100%;
-  // width: 35%;
-  // height: 85vh;
   background-color: red;
   display: none;
   @media #{$tablet} {
@@ -95,10 +98,10 @@ header {
   }
 }
 
+// FORM'S BOX
 .right-box {
   max-width: 100%;
   width: 100%;
-  height: 90vh;
   background-color: #f1f1f4;
   padding: 10px;
   @media #{$tablet} {
@@ -120,9 +123,10 @@ header {
 
 .main-form {
   h2 {
-    color: black;
-    font-size: 15px;
-    padding: 10px 5px 5px 5px;
+    color: #323233;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 5px;
     @media #{$tablet} {
       padding: 15px;
     }
@@ -131,41 +135,18 @@ header {
     }
   }
   form {
-    // height: 450px;
     fieldset {
+      padding: 10px;
       border: none;
     }
   }
 }
 
-@mixin field($padding, $fontsize) {
-  height: 45px;
-  padding: $padding;
-  margin: 0 5px;
-  font-size: $fontsize;
-  border: none;
-  border-bottom: 2px solid red;
-  outline: inherit;
-  background-color: #f1f1f4;
-  text-align: left;
-}
-
-input, select {
-  @include field(10px 0 5px 0, 16px);
-  @media #{$tablet} {
-    @include field(12px, 14px);
-  }
-  @media #{$desktop} {
-    @include field(12px, 14px);
-  }
-}
-
 label {
   font-size: 12px;
-  color: black;
-  // margin: 25px;
+  color: #5F5F61;
   p {
-    margin: 25px 0 0 5px;
+    margin-top: 20px;
     @media #{$tablet} {
       margin: 15px 0 0 15px;
     }
@@ -175,43 +156,52 @@ label {
   }
 }
 
-// input, select {
-//   font-size: 12px;
-//   height: 40px;
-//   // width: 100%;
-//   border: none;
-//   border-bottom: 2px solid red;
-//   outline: inherit;
-//   background-color: #f1f1f4;
-//   padding: 10px;
-//   @media #{$tablet} {
-//     font-size: 16px;
-//   }
-//   @media #{$desktop} {
-//     font-size: 16px;
-//   }
-// }
+@mixin field($padding) {
+  height: 45px;
+  padding: $padding;
+  // margin: 0 5px;
+  font-size: 16px;
+  color: #323233;
+  text-transform: uppercase;
+  text-align-last: center;
+  border: none;
+  border-bottom: 2px solid #28A9A7;
+  outline: inherit;
+  background-color: #f1f1f4;
+  background-color: transparent;
+  &:focus {
+    border-bottom: 2px solid #B63D99;
+  }
+}
 
+input, select {
+  @include field(10px 0 5px 0);
+  @media #{$tablet} {
+    @include field(12px);
+  }
+  @media #{$desktop} {
+    @include field(12px);
+  }
+}
 
-// input {
-//   padding: 15px;
-//   // margin: 0 5px
-// }
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 
 .field-container {
   display: flex;
 }
 
-.name-container {
+.name-container, .email-container {
   input {
     width: 100%;
-    // margin: 0 5px;
   }
 }
 
 .mobile-container {
   select, input {
-    // margin: 0 5px;
     &.mobile {
       flex-grow: 1;
     }
@@ -221,13 +211,8 @@ label {
   }
 }
 
-.email-container {
-
-}
-
 .birth-container {
   select {
-    // margin: 0 5px;
     &.dob-day {
       flex-grow: 1;
     }
@@ -240,6 +225,78 @@ label {
   }
 }
 
+.agreement-container {
+  justify-content: flex-end;
+  margin: 20px 0;
+  // justify-content: space-between;
+  input {
+    display: none;
+  }
+  span {
+    width: 30px;
+    height: 30px;
+    display: block;
+    border: 2px solid #28A9A7;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  p {
+    margin: 0;
+    line-height: 30px;
+  }
+}
+
+input[type="checkbox"]:checked + span {
+  width: 30px;
+  height: 30px;
+  background-image: url("../images/form_ok.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  width: 100%;
+  height: 40px;
+  color: #ffffff;
+  // font-weight: 700;
+  border-style: none;
+  background-color: #B63D99;
+  margin-top: 15px;
+  cursor: pointer;
+  &:hover {
+    background-color: yellow;
+  }
+  &:active {
+    background-color: #24ba9f;
+    transform: translateY(1px);
+  }
+}
+
+// .button {
+//   display: inline-block;
+//   background-color: #24ba9f;
+//   border-radius: 10px;
+//   font-weight: 400;
+//   text-transform: uppercase;
+//   color: #ffffff;
+//   text-align: center;
+//   cursor: pointer;
+//   margin: 0 auto;
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+// }
+//
+// .button:hover {
+//   background-color: #27CCAE;
+// }
+//
+// .button:active {
+//   background-color: #24ba9f;
+//   transform: translateY(1px);
+// }
 
 
 .finish-form {

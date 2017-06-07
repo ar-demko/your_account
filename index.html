@@ -34,7 +34,7 @@
                   <label>
                     <p>Your name:</p>
                     <div class="field-container name-container">
-                      <input type="text" name="name" id="name" placeholder="John Smith">
+                      <input type="text" name="name" id="name">
                     </div>
                   </label>
 
@@ -45,14 +45,14 @@
                         <option value="+48">+48 PL</option>
                         <option value="+44">+44 UK</option>
                       </select>
-                      <input type="tel" name="tel" class="tel" placeholder="000 000 000">
+                      <input type="tel" name="tel" class="tel">
                     </div>
                   </label>
 
-                  <label for="field-container email-container">
+                  <label>
                     <p>Your e-mail:</p>
-                    <div class="">
-                      <input type="email" name="email" placeholder="jsmith@mail.com">
+                    <div class="field-container email-container">
+                      <input type="email" name="email">
                     </div>
                   </label>
 
@@ -225,7 +225,15 @@
                       </select>
                     </div>
                   </label><br>
-                  <input type="submit" value="continue">
+                  <label>
+                    <div class="field-container agreement-container">
+                      <p>I accpet the terms and conditions</p>
+                      <input type="checkbox" value="remember">
+                      <span></span>
+
+                    </div>
+                  </label>
+                  <input type="submit" value="send">
                 </fieldset>
               </form>
             </article>
@@ -237,5 +245,8 @@
       </div>
     </div>
   </main>
+  <footer>
+    
+  </footer>
 </body>
 </html>
