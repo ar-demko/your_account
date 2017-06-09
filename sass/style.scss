@@ -83,13 +83,17 @@ header {
 
 // IMG BOX
 .left-box {
-  background-color: red;
   display: none;
   @media #{$tablet} {
     width: 35%;
     height: 600px;
     display: block;
     margin-left: 50px;
+    background-color: red;
+    background-image: url("../images/pencil.jpg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
   }
   @media #{$desktop} {
     width: 35%;
@@ -249,7 +253,7 @@ select {
 input[type="checkbox"]:checked + span {
   width: 30px;
   height: 30px;
-  background-image: url("../images/form_ok.jpg");
+  background-image: url("../images/ok_green.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -262,14 +266,14 @@ input[type="submit"] {
   color: #ffffff;
   // font-weight: 700;
   border-style: none;
-  background-color: #B63D99;
+  background-color: #28A9A7;
   margin-top: 15px;
   cursor: pointer;
   &:hover {
-    background-color: yellow;
+    background-color: #2BB6B4;
   }
   &:active {
-    background-color: #24ba9f;
+    background-color: #B63D99;
     transform: translateY(1px);
   }
 }
