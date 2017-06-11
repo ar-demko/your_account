@@ -1,6 +1,7 @@
 // $phone: "(min-width: 320px) and (max-width: 600px)";
 $tablet: "(min-width: 768px) and (max-width: 1023px)";
 $desktop: "(min-width: 1024px)";
+$tabletdesktop: "(min-width: 768px)";
 
 
 * {
@@ -64,8 +65,12 @@ header {
     text-transform: uppercase;
     text-align: center;
     font-size: 30px;
+    margin-top: 10px;
     @media #{$tablet} {
       font-size: 42px;
+    }
+    @media #{$tabletdesktop} {
+      margin: 40px 0;
     }
     @media #{$desktop} {
       font-size: 44px;
@@ -78,27 +83,36 @@ header {
 #form {
   display: flex;
   flex-direction: row;
-  // justify-content: space-between;
+  animation: box 4s;
+}
+
+@keyframes box {
+  0% {
+    transform: scale(.5);
+    opacity: .5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+
+  }
 }
 
 // IMG BOX
 .left-box {
   display: none;
   @media #{$tablet} {
+    margin-left: 50px;
+  }
+  @media #{$tabletdesktop} {
     width: 35%;
     height: 600px;
     display: block;
-    margin-left: 50px;
     background-color: red;
     background-image: url("../images/pencil.jpg");
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
-  }
-  @media #{$desktop} {
-    width: 35%;
-    height: 600px;
-    display: block;
   }
 }
 
@@ -109,12 +123,9 @@ header {
   background-color: #f1f1f4;
   padding: 10px;
   @media #{$tablet} {
-    width: 65%;
-    height: 600px;
-    padding: 30px;
     margin-right: 50px;
   }
-  @media #{$desktop} {
+  @media #{$tabletdesktop} {
     width: 65%;
     height: 600px;
     padding: 30px;
@@ -131,10 +142,7 @@ header {
     font-size: 16px;
     font-weight: 400;
     padding: 5px;
-    @media #{$tablet} {
-      padding: 15px;
-    }
-    @media #{$desktop} {
+    @media #{$tabletdesktop} {
       padding: 15px;
     }
   }
@@ -151,11 +159,8 @@ label {
   color: #5F5F61;
   p {
     margin-top: 20px;
-    @media #{$tablet} {
-      margin: 15px 0 0 15px;
-    }
-    @media #{$desktop} {
-      margin: 15px 0 0 15px;
+    @media #{$tabletdesktop} {
+      margin: 15px 0 0 5px;
     }
   }
 }
@@ -163,7 +168,6 @@ label {
 @mixin field($padding) {
   height: 45px;
   padding: $padding;
-  // margin: 0 5px;
   font-size: 16px;
   color: #323233;
   text-transform: uppercase;
@@ -180,11 +184,9 @@ label {
 
 input, select {
   @include field(10px 0 5px 0);
-  @media #{$tablet} {
+  @media #{$tabletdesktop} {
     @include field(12px);
-  }
-  @media #{$desktop} {
-    @include field(12px);
+    margin: 0 5px;
   }
 }
 
@@ -243,12 +245,17 @@ select {
     border: 2px solid #28A9A7;
     margin-left: 10px;
     cursor: pointer;
+    @media #{$tabletdesktop} {
+      margin: 0 5px 0 10px;
+    }
   }
   p {
     margin: 0;
     line-height: 30px;
   }
 }
+
+// CHECKBOX
 
 input[type="checkbox"]:checked + span {
   width: 30px;
@@ -260,11 +267,16 @@ input[type="checkbox"]:checked + span {
   cursor: pointer;
 }
 
+// BUTTON SEND
+
+.button-container {
+  justify-content: flex-end;
+}
+
 input[type="submit"] {
   width: 100%;
   height: 40px;
-  color: #ffffff;
-  // font-weight: 700;
+  color: #f1f1f4;
   border-style: none;
   background-color: #28A9A7;
   margin-top: 15px;
@@ -273,8 +285,14 @@ input[type="submit"] {
     background-color: #2BB6B4;
   }
   &:active {
-    background-color: #B63D99;
+    background-color: #28A9A7;
     transform: translateY(1px);
+  }
+  @media #{$tablet} {
+    width: 68%;
+  }
+  @media #{$desktop} {
+    width: 55%;
   }
 }
 
