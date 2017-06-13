@@ -108,7 +108,7 @@ header {
     width: 35%;
     height: 600px;
     display: block;
-    background-color: red;
+    background-color: #28A9A7;
     background-image: url("../images/notebook.jpg");
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -234,7 +234,6 @@ select {
 .agreement-container {
   justify-content: flex-end;
   margin: 20px 0;
-  // justify-content: space-between;
   input {
     display: none;
   }
@@ -295,30 +294,6 @@ input[type="submit"] {
     width: 55%;
   }
 }
-
-// .button {
-//   display: inline-block;
-//   background-color: #24ba9f;
-//   border-radius: 10px;
-//   font-weight: 400;
-//   text-transform: uppercase;
-//   color: #ffffff;
-//   text-align: center;
-//   cursor: pointer;
-//   margin: 0 auto;
-//   position: absolute;
-//   left: 0;
-//   right: 0;
-// }
-//
-// .button:hover {
-//   background-color: #27CCAE;
-// }
-//
-// .button:active {
-//   background-color: #24ba9f;
-//   transform: translateY(1px);
-// }
 
 
 .finish-form {
