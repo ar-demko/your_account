@@ -28,32 +28,32 @@
                   <label>
                     <p>Your name:</p>
                     <div class="field-container name-container">
-                      <input type="text" name="name" id="name">
+                      <input type="text" required name="name" id="name">
                     </div>
                   </label>
 
                   <label>
                     <p>Mobile:</p>
                     <div class="field-container mobile-container">
-                      <select name="mobile" class="mobile">
+                      <select required name="mobile" class="mobile">
                         <option value="+48">+48 PL</option>
                         <option value="+44">+44 UK</option>
                       </select>
-                      <input type="tel" name="tel" class="tel">
+                      <input type="tel" required name="tel" class="tel">
                     </div>
                   </label>
 
                   <label>
                     <p>Your e-mail:</p>
                     <div class="field-container email-container">
-                      <input type="email" name="email">
+                      <input type="email" required name="email">
                     </div>
                   </label>
 
                   <label>
                     <p>Date of birth:</p>
                     <div class="field-container birth-container">
-                      <select name="dob-day" class="dob-day">
+                      <select required name="dob-day" class="dob-day">
                         <option value="">Day</option>
                         <option value="01">01</option>
                         <option value="02">02</option>
@@ -87,7 +87,7 @@
                         <option value="30">30</option>
                         <option value="31">31</option>
                       </select>
-                      <select name="dob-month" class="dob-month">
+                      <select required name="dob-month" class="dob-month">
                         <option value="">Month</option>
                         <option value="01">January</option>
                         <option value="02">February</option>
@@ -102,7 +102,7 @@
                         <option value="11">November</option>
                         <option value="12">December</option>
                       </select>
-                      <select name="dob-year" class="dob-year">
+                      <select required name="dob-year" class="dob-year">
                         <option value="">Year</option>
                         <option value="2012">2012</option>
                         <option value="2011">2011</option>
@@ -222,7 +222,7 @@
                   <label>
                     <div class="field-container agreement-container">
                       <p>I accpet the terms and conditions</p>
-                      <input type="checkbox" value="remember">
+                      <input type="checkbox" required value="remember">
                       <span></span>
                     </div>
                   </label>

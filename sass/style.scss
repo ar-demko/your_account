@@ -296,6 +296,13 @@ input[type="submit"] {
 }
 
 
+//validation
+
+form .error {
+  color: #B63D99;
+  border-color: #B63D99;
+}
+
 .finish-form {
   display: none;
 }
